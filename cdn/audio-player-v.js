@@ -57,6 +57,15 @@ var GreenAudioPlayer = /*#__PURE__*/function () {
     this.enableKeystrokes = opts.enableKeystrokes || false;
     this.showTooltips = opts.showTooltips || false;
     var self = this;
+    
+    //new function for speed audio	
+    var speedlist = document.getElementById("speedlist");
+    speedlist.addEventListener("change",changeSpeed);
+
+      function changeSpeed(event){
+      audio.playbackRate = event.target.value;
+    }
+    
     this.labels = {
       volume: {
         open: 'Open Volume Controls',
